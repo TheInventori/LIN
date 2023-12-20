@@ -1,0 +1,2 @@
+# LIN
+Poznamky z linuxu
