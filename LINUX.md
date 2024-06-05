@@ -166,7 +166,33 @@ ________________________________________________________________________________
   * napr. `o - r` (skupine `o` teda other pomocou operatora `-` minus, odoberieme pravo `r` teda read)
 * nemiesto znakov `r`, `w`, `x`, vieme taktiez pouzit cislo od 0 po 7
 <br>
+
 | cislo | read | write | execute |
 | ---| --- | --- | --- |
-| 0 | / | / | / |
-| 1 | / | / | x |
+| 0 | - | - | - |
+| 1 | - | - | x |
+| 2 | - | w | - |
+| 3 | - | w | x |
+| 4 | r | - | - |
+| 5 | r | - | x |
+| 6 | r | w | - |
+| 7 | r | w | x |
+
+<br>
+
+* teda ak chceme priradit kazdej skupine prava na vsetko pouzijeme kombinaciu `777`
+* tieto zmeny realizujeme prikazom `chmod`
+  * `chmod [nazov_skupiny] - [pravo]` => takto vieme aj odobrat alebo pridat ci nastavit pravo konkretnej skupine
+<br>
+
+* skupinu suboru vieme zmenit pomocou prikazu `chgrp`
+  * ak si chceme zistit ake skupiny existuju pouzijeme prikaz `groups`
+* a ak chceme zmenit vlastnika vlastnika suboru tak pouzijeme prikaz `chown`
+  * ak za meno noveho vlastnika pridame aj nazov skupiny dokaze zmenit aj skupinu
+<br>
+
+* pre tvorbu uzivatela pouzivame prikazy `useradd` a `adduser`
+  * tieto dva prikazy sa lisia najme tym ze `adduser` uzivatelovi vytvory aj domovsky priecinok zatial co `useradd` tieto priecinky nevytvory
+<br>
+
+**Specialne prava**
