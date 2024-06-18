@@ -194,5 +194,14 @@ ________________________________________________________________________________
 * pre tvorbu uzivatela pouzivame prikazy `useradd` a `adduser`
   * tieto dva prikazy sa lisia najme tym ze `adduser` uzivatelovi vytvory aj domovsky priecinok zatial co `useradd` tieto priecinky nevytvory
 <br>
+* pre tvorbu skupiny pouzivame prikaz `addgroup [nazov]`
+  * prikazom `usermod -G [nazov_skupiny] [meno_uzivatela]` priradime uzivatela do skupiny
 
 **Specialne prava**
+##### user + s (SUID)
+
+* specialne povolenie pre uroven pristupu pouzivatela, ktore sa oznacuje ako `SUID`, ma funkciu
+  * subor s `SUID` sa vzdy spusti ako pouzivatel ktory tento subor vlastni, bez ohladu na to kto tento subor spustil
+  * ak vlastnik suboru nema povolenia na spustenie suborov, namiesto `user + s` pouzite `user + S`
+
+
